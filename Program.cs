@@ -1,41 +1,40 @@
 ﻿
-//Desafio - Preenchimento de vetor
+//Desafio - Trigo no Tabuleiro
 
 /*
-Você recebeu o desafio de ler um valor e criar um programa que coloque o valor lido na primeira posição de um vetor N[10]. Em cada posição subsequente, coloque o dobro do valor da posição anterior. Por exemplo, se o valor lido for 1, os valores do vetor devem ser 1,2,4,8 e assim sucessivamente. Mostre o vetor em seguida.
+Uma rainha requisitou os serviços de um monge e disse-lhe que pagaria qualquer preço. O monge, necessitando de alimentos, perguntou a rainha se o pagamento poderia ser feito em grãos de trigo dispostos em um tabuleiro de damas, de forma que o primeiro quadrado tivesse apenas um grão, e os quadrados subseqüentes, o dobro do quadrado anterior. A rainha considerou o pagamento barato e pediu que o serviço fosse executado, porém, um dos cavaleiros que estava presente e entendia um pouco de matemática alertou-a que seria impossível executar o pagamento, pois a quantidade de grão seria muito alta. Curiosa, a rainha solicitou então a este cavaleiro que era bom em cálculo, que fizesse um programa que recebesse como entrada o número de quadrados a serem usados em um tabuleiro de damas e apresentasse a quantidade de kg de trigo correspondente, sabendo que cada 12 grãos do cereal correspondem a uma grama. Finalmente, o cálculo da quantidade deverá caber em um valor inteiro de 64 bits sem sinal.
 Entrada
 
-A entrada contém um valor inteiro (V<=50).
+A primeira linha de entrada contem um único inteiro N (1 ≤ N ≤ 100), indicando o número de casos de teste. Cada caso de teste contém um único inteiro X (1 ≤ X ≤ 64), indicando o número de casas do tabuleiro que serão utilizadas.
 Saída
 
-Para cada posição do vetor, escreva "N[i] = X", onde i é a posição do vetor e X é o valor armazenado na posição i. O primeiro número do vetor N (N[0]) irá receber o valor de V.
+Para cada caso de teste, imprima a quantidade de kgs de trigo que o monge esperava receber.
+
 */
 
-using System; 
+using System;
+using System.Numerics;
 
-class minhaClasse {
+class Program{
+//complete os espaços em branco com sua solução
+    static void Main(string[] args) { 
 
-    static void Main(string[] args) {
-
-            int valorLido = int.Parse(Console.ReadLine());
-            int[] n = new int[10];
-            int cont = 0;
-            int j = 0;
+        //ulong resultado = 0;
+        BigInteger resultado = 0;
+        int qtdTeste = int.Parse(Console.ReadLine());
+        for ( int i = 0; i < qtdTeste; i++)
+        {
+            int casas = int.Parse(Console.ReadLine());
+            resultado = 1;
             
-            n[0] = valorLido;
-            
-             for (int i = 1; i < 10; i++)
-            {
-               n[i] = (n[j] * 2);
-               j++;
-            }
+            do{
+              resultado = resultado * 2;
+              casas -=1;
 
-            for (int i = 0; i < 10; i++)
-            {
-                Console.WriteLine("N[{0}] = {1}", i, n[i]);
-            }
+            }while(casas >  0);
+            resultado = resultado/12000;
+            Console.WriteLine($"{resultado} kg");
 
-
+        }
     }
-
 }

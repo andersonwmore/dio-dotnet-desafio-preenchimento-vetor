@@ -1,8 +1,8 @@
-# Desafio - Preenchimento de Vetor
+# Desafio - Trigo no Tabuleiro
 
 ​	*Objetivos:*
 
-	- Uso de vetor na Linguagem C-Sharp
+	- Implementar usando Do/While na Linguagem C-Sharp
 
 ## Projeto de Estudo - BootCamps - DIO
 
